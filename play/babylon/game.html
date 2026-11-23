@@ -4,12 +4,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Pet Game · Babylon.js</title>
 <style>html,body{margin:0;height:100%;overflow:hidden;background:#bfe3ff;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}#c{display:block;width:100%;height:100%}
-#cover{position:fixed;inset:0;z-index:50;background:#bfe3ff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:16px sans-serif;color:#2a4a66}
+#cover{position:fixed;top:0;left:0;right:0;bottom:0;z-index:50;background:#bfe3ff;display:flex;flex-direction:column;align-items:center;justify-content:center;font:16px sans-serif;color:#2a4a66}
 #cover i{width:40px;height:40px;border:4px solid rgba(42,74,102,.2);border-top-color:#2a4a66;border-radius:50%;margin-bottom:14px;animation:sp 0.9s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}</style>
 </head><body>
 <canvas id="c"></canvas>
 <div id="cover"><i></i>🐾 กำลังเตรียมน้อง…</div>
-<script>window.GAME_BUILD='f717c23b'</script>
-<script src="game.js?v=f717c23b"></script>
+<script>window.GAME_BUILD='1642fada';
+// เครื่องที่เปิดดูคอนโซลไม่ได้ (เช่น iPhone บน BrowserStack): ถ้าสคริปต์พังก่อนเกมเริ่ม ให้ขึ้นข้อความบนจอแทนจอขาว
+(function(){function show(m){var c=document.getElementById('cover');if(!c)return;c.style.cssText+=';padding:16px;text-align:left;font:13px monospace;word-break:break-all;overflow:auto;justify-content:flex-start';c.innerHTML='<b>⚠ เกมเริ่มไม่ได้</b><br>build '+window.GAME_BUILD+'<br>'+String(m).replace(/</g,'&lt;')+'<br><br>'+navigator.userAgent}
+window.addEventListener('error',function(e){show((e.message||'error')+' @'+(e.filename||'').split('/').pop()+':'+(e.lineno||'')+':'+(e.colno||''))});
+window.addEventListener('unhandledrejection',function(e){show('promise: '+((e.reason&&(e.reason.message||e.reason))||''))});
+setTimeout(function(){var c=document.getElementById('cover');if(c&&c.style.display!=='none'&&!window.game)show('โหลดไม่เสร็จใน 25 วินาที (ไม่มี error)')},25000)})();
+</script>
+<script src="game.js?v=1642fada"></script>
 </body></html>
